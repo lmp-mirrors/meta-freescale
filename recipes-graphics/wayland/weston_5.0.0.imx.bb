@@ -120,14 +120,7 @@ do_install_append() {
 	fi
 
 	# install default weston.ini
-	if [ -z "${@bb.utils.filter('BBFILE_COLLECTIONS', 'aglprofilegraphical', d)}" ]; then
-		if [ "${@bb.utils.filter('BBFILE_COLLECTIONS', 'ivi', d)}" ]; then
-			WESTON_INI_SRCDIR=${B}/ivi-shell
-		else
-			WESTON_INI_SRCDIR=${B}
-		fi
-		install -D -m 0644 ${WESTON_INI_SRCDIR}/weston.ini ${D}${sysconfdir}/xdg/weston/weston.ini
-	fi
+	install -D -m 0644 ${WORKDIR}/weston.ini ${D}${sysconfdir}/xdg/weston/weston.ini
 }
 
 PACKAGES += "${@bb.utils.contains('PACKAGECONFIG', 'xwayland', '${PN}-xwayland', '', d)} \
