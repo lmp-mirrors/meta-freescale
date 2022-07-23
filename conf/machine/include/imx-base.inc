@@ -113,6 +113,9 @@ UBOOT_PROVIDES_BOOT_CONTAINER:imx-boot-container = "1"
 # Default TF-A provider to NXP downstream fork
 IMX_DEFAULT_ATF_PROVIDER ??= "imx-atf"
 
+# Allow setting the UART used during the boot by ATF.
+ATF_BOOT_UART_BASE:mx8m-generic-bsp   ??= "0x30890000"
+
 PREFERRED_PROVIDER_virtual/xserver      = "xserver-xorg"
 XSERVER_DRIVER                          = "xf86-video-fbdev"
 XSERVER_DRIVER:vf-generic-bsp           = "xf86-video-modesetting"
