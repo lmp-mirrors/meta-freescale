@@ -33,6 +33,7 @@ EXTRA_OEMAKE:append:imx8mq-lpddr4-wevk = " \
     CFG_DDR_SIZE=0x100000000 \
     CFG_TZDRAM_START=0xfe000000 \
 "
+export EXTRA_CFLAGS = "${CFLAGS}"
 
 LDFLAGS[unexport] = "1"
 CPPFLAGS[unexport] = "1"

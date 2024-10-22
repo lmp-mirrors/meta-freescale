@@ -7,8 +7,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
 
 SRC_URI = "file://tee-supplicant.service"
 
-S = "${WORKDIR}/git"
-B = "${WORKDIR}/build"
+S = "${UNPACKDIR}/git"
+B = "${UNPACKDIR}/build"
 
 inherit python3native systemd features_check pkgconfig
 

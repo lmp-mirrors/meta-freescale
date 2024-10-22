@@ -6,8 +6,8 @@ REQUIRED_MACHINE_FEATURES = "optee"
 
 DEPENDS = "python3-cryptography-native"
 
-S = "${WORKDIR}/git"
-B = "${WORKDIR}/build"
+S = "${UNPACKDIR}/git"
+B = "${UNPACKDIR}/build"
 
 OPTEE_ARCH:arm     = "arm32"
 OPTEE_ARCH:aarch64 = "arm64"
@@ -23,4 +23,5 @@ EXTRA_OEMAKE = " \
     OPENSSL_MODULES=${STAGING_LIBDIR_NATIVE}/ossl-modules \
     OPTEE_CLIENT_EXPORT=${STAGING_DIR_HOST}${exec_prefix} \
     -C ${S} O=${B} \
+    AFLAGS="${CFLAGS}" \
 "
